@@ -24,12 +24,12 @@ def readConfig(device):
     """
     tVals = device.readReg(0x02,3)  #读取数据内容、回传速率、通讯速率   Read data content, return rate, communication rate
     if (len(tVals)>0):
-        print("返回结果：" + str(tVals))
+        print("Reg3返回结果：" + str(tVals))
     else:
         print("无返回")
     tVals = device.readReg(0x23,2)  #读取安装方向、算法  Read the installation direction and algorithm
     if (len(tVals)>0):
-        print("返回结果：" + str(tVals))
+        print("Reg2返回结果：" + str(tVals))
     else:
         print("无返回")
 
@@ -105,12 +105,12 @@ def onUpdate(deviceModel):
     :param deviceModel: 设备模型    Device model
     :return:
     """
-    print("芯片时间:" + str(deviceModel.getDeviceData("Chiptime"))
-         , " 温度:" + str(deviceModel.getDeviceData("temperature"))
-         , " 加速度：" + str(deviceModel.getDeviceData("accX")) +","+  str(deviceModel.getDeviceData("accY")) +","+ str(deviceModel.getDeviceData("accZ"))
-         ,  " 角速度:" + str(deviceModel.getDeviceData("gyroX")) +","+ str(deviceModel.getDeviceData("gyroY")) +","+ str(deviceModel.getDeviceData("gyroZ"))
-         , " 角度:" + str(deviceModel.getDeviceData("angleX")) +","+ str(deviceModel.getDeviceData("angleY")) +","+ str(deviceModel.getDeviceData("angleZ"))
-        , " 磁场:" + str(deviceModel.getDeviceData("magX")) +","+ str(deviceModel.getDeviceData("magY"))+","+ str(deviceModel.getDeviceData("magZ"))
+    print("Chiptime:" + str(deviceModel.getDeviceData("Chiptime"))
+         , " temperature:" + str(deviceModel.getDeviceData("temperature"))
+         , " accel：" + str(deviceModel.getDeviceData("accX")) +","+  str(deviceModel.getDeviceData("accY")) +","+ str(deviceModel.getDeviceData("accZ"))
+         ,  " gyro:" + str(deviceModel.getDeviceData("gyroX")) +","+ str(deviceModel.getDeviceData("gyroY")) +","+ str(deviceModel.getDeviceData("gyroZ"))
+         , " angle:" + str(deviceModel.getDeviceData("angleX")) +","+ str(deviceModel.getDeviceData("angleY")) +","+ str(deviceModel.getDeviceData("angleZ"))
+        , " magnetometer:" + str(deviceModel.getDeviceData("magX")) +","+ str(deviceModel.getDeviceData("magY"))+","+ str(deviceModel.getDeviceData("magZ"))
           )
     if (_IsWriteF):    #记录数据    Record data
         Tempstr = " " + str(deviceModel.getDeviceData("Chiptime"))

@@ -91,7 +91,7 @@ class DeviceModel:
         读取数据线程
         :return:
         """
-        print("启动" + threadName)
+        print("readDataTh" + threadName)
         while True:
             # 如果串口打开了
             if self.isOpen:
